@@ -1,9 +1,9 @@
-from class_example import *
+from classes import *
 
 myList = Markets(2000) 
 
-s = input("Give me number:")
-print s 
+#s = input("Give me number:")
+#print(s) 
 
 def createMarket(market_list, name_of_market, totalNumber):
 	aMarket = Market()
