@@ -1,5 +1,6 @@
 from classes import *
 
+
 myList = Markets(2000) 
 
 #s = input("Give me number:")
@@ -7,6 +8,7 @@ myList = Markets(2000)
 
 def createMarket(market_list, name_of_market, totalNumber):
 	aMarket = Market()
+	aMarket.setDate()
 	aMarket.changeNumberOfShoes(totalNumber)
 	aMarket.changeName(name_of_market)
 	market_list.addMarkets(aMarket)
@@ -19,19 +21,15 @@ createMarket(myList, "Norrkoping", 200)
 createMarket(myList, "Kumla", 1000)
 #myList.getList()[0].displayName()
 
-print myList.inventory
+year = datetime.date.today().year
 
-closeMarket(myList, 55)
 
-print myList.inventory
-
-closeMarket(myList, 2000)
-
-print myList.inventory
+print year
 
 for market in myList.getList():
 	market.displayName()
 	market.displayTotal()
 	market.displaySold()
+	market.printDate()
 
 	

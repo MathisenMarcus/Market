@@ -1,3 +1,5 @@
+import datetime
+
 class Markets:
 
 	def __init__(self,myInventory):
@@ -25,6 +27,9 @@ class Market:
 		self.totalNumberOfShoes = 0
 		self.numberSold = 0
 		self.marketName = "NoName"
+		self.dateYear = ""
+		self.dateMonth = ""
+		self.dateDay = ""
 
 	def changeNumberOfShoes(self,total):
 		self.totalNumberOfShoes = total
@@ -39,6 +44,13 @@ class Market:
 		print "Number of shoes sold: " + str(self.numberSold)
 	def displayName(self):
 		print "Name of market: " + self.marketName 
+
+	def setDate(self):
+		self.dateYear = datetime.date.today().year
+		self.dateMonth = datetime.date.today().month
+		self.dateDay = datetime.date.today().day 
+	def printDate(self):
+		print str(self.dateDay) + "/" + str(self.dateMonth) + "-" + str(self.dateYear)
 
 
 
