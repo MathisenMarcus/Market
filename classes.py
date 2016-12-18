@@ -1,7 +1,7 @@
 import datetime
 
 class Markets:
-
+	""" Class that keeps track of all the markets """
 	def __init__(self,myInventory):
 		self.marketList = []
 		self.inventory = myInventory
@@ -18,18 +18,24 @@ class Markets:
 			self.inventory = self.inventory - sold
 		else:
 			print "Inventory empty"
+	def displayInformation(self,myMarket):
+		for market in myMarket.getList():
+				market.displayName()
+				market.displayTotal()
+				market.displaySold()
+				market.printDate()
 			
 
 
 class Market:
-
+	""" Market class which contains informaton abouth each market"""
 	def __init__(self):
 		self.totalNumberOfShoes = 0
 		self.numberSold = 0
 		self.marketName = "NoName"
-		self.dateYear = ""
-		self.dateMonth = ""
-		self.dateDay = ""
+		self.dateYear = "No year set"
+		self.dateMonth = "No month set"
+		self.dateDay = "No day set"
 
 	def changeNumberOfShoes(self,total):
 		self.totalNumberOfShoes = total

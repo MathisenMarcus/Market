@@ -3,8 +3,8 @@ from classes import *
 
 myList = Markets(2000) 
 
-#s = input("Give me number:")
-#print(s) 
+#s = raw_input("Give me number:")
+#print s 
 
 def createMarket(market_list, name_of_market, totalNumber):
 	aMarket = Market()
@@ -19,17 +19,15 @@ def closeMarket(market_list, number_sold):
 
 createMarket(myList, "Norrkoping", 200)
 createMarket(myList, "Kumla", 1000)
-#myList.getList()[0].displayName()
 
-year = datetime.date.today().year
+myList.displayInformation(myList)
 
-
-print year
-
-for market in myList.getList():
-	market.displayName()
-	market.displayTotal()
-	market.displaySold()
-	market.printDate()
-
-	
+programState = True
+while programState:
+	print "Valkommen till Uncle Marknadsprogram"
+	myInput = raw_input("Avsluta? (Ja / Nej): ")
+	if myInput == 'Ja':
+		print "Du avslutar nu programmet!"
+		programState = False
+	elif myInput == 'Nej':
+		print "Du fortsatter med programmet!"
